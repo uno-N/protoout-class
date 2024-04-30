@@ -1,0 +1,290 @@
+# 1. HTML/CSS/JavaScriptの役割を理解しよう
+
+本章では、自己紹介ページを作り、HTML/CSS/JavaScriptの役割を理解していきます。  
+
+## 1-1. WebページにおけるHTML/CSS/JavaScriptの役割
+
+<a href="https://gyazo.com/0c7c76e50cbad27cae294b961653016b"><img src="https://i.gyazo.com/0c7c76e50cbad27cae294b961653016b.png" alt="Image from Gyazo" width="600"/></a>
+
+皆さんが普段目にしているWebページは、
+
+- `HTML`
+- `CSS`
+- `JavaScript`
+
+を使って作成されています。
+
+> [![Image from Gyazo](https://i.gyazo.com/c3286b9f6c66f348e5bc7b0a6e62f001.png)](https://gyazo.com/c3286b9f6c66f348e5bc7b0a6e62f001)  
+> https://fastcoding.jp/blog/all/jquery/html-css-javascript/
+
+ハンズオンを通して、上記の役割を理解しましょう。
+
+> 今日のハンズオンでは、HTML/CSS/JavaScriptの役割がわかり、思った通りに動作すればOKです。  
+> HTMLやCSSの書き方をもっと勉強したい場合は、一般の無料オンライン講座をおすすめしています。
+>
+> - [HTML & CSS 学習コース 初級編 | プログラミングの入門なら基礎から学べるProgate[プロゲート]](https://prog-8.com/lessons/html/study/1)
+> - [JavaScript | プログラミングの入門なら基礎から学べるProgate[プロゲート]](https://prog-8.com/courses/es6)
+>
+> 上記のコースであれば約4時間で修了することができます。
+
+## 1-2. CodePenで自己紹介ページを作成する
+
+では早速、みなさんも実際に手を動かしてWebの開発をはじめてみましょう！  
+今回のハンズオンでは、`CodePen`という書いたコードをリアルタイムに表示してくれるサービスを利用します。
+
+### 1-2-1. 完成イメージ
+
+[![Image from Gyazo](https://i.gyazo.com/59e1438fda6f18353cc970a425ca7453.png)](https://gyazo.com/59e1438fda6f18353cc970a425ca7453)
+
+完成版のコードは[こちら](https://codepen.io/tmitsuoka0423/pen/yLbJgMa)にアップしています。  
+うまく動かなかった方は、こちらを利用してください。
+
+### 1-2-2. CodePenへサインアップ
+
+[![Image from Gyazo](https://i.gyazo.com/5f14a88d820fce6fd391e9e3078c42fa.png)](https://gyazo.com/5f14a88d820fce6fd391e9e3078c42fa)
+
+上記のペンを開いたら、まず右上にある「Sign Up」をクリックし、アカウントを作ります。
+
+[![Image from Gyazo](https://i.gyazo.com/aa5a0b870e75905faa0c38a6d66984de.png)](https://gyazo.com/aa5a0b870e75905faa0c38a6d66984de)
+
+TwitterまたはGitHubでアカウントを作成しましょう。
+
+[![Image from Gyazo](https://i.gyazo.com/2e0ef7d6992fa59f663ada3690f3c716.png)](https://gyazo.com/2e0ef7d6992fa59f663ada3690f3c716)
+
+アカウント作成直後はチュートリアルが始まります。  
+英語ですが、読まなくてもライブコーディングが見れるので、緑色のNextボタンをクリックしながら進めていきましょう。
+
+[![Image from Gyazo](https://i.gyazo.com/c14ffb52a01a22339391bd9233e6b10d.png)](https://gyazo.com/c14ffb52a01a22339391bd9233e6b10d)
+
+表示がこのような状態になったら、チュートリアル完了です。  
+
+### 1-2-3. ペンを作成する
+
+右上のアイコン → `New Pen`からペンを作成します。
+
+[![Image from Gyazo](https://i.gyazo.com/44f869b9292d36a4adacebc65f1b077d.png)](https://gyazo.com/44f869b9292d36a4adacebc65f1b077d)
+
+> CodePenでは、リアルタイムにHTML、CSS、JSを編集できる画面のことを「Pen」（ペン）と呼んでいます。  
+> Penは誰にでもシェアできますが、反面、ログインしてなくても誰にでも見られますので、重要な情報を書き残してはいけません。 
+
+### 1-2-4. HTMLでパーツを配置する
+
+[![Image from Gyazo](https://i.gyazo.com/efee23677413500602a079f2d352bc72.png)](https://gyazo.com/efee23677413500602a079f2d352bc72)
+
+HTMLのエリアに、下記のコードをコピー＆ペーストします。
+
+```html
+<h1>自己紹介します</h1>
+<img src="https://prtimes.jp/i/79105/1/resize/d79105-1-505527-7.jpg">
+<p>
+  <span class="name">光岡</span> です。<br />
+  仲良くしてください。
+</p>
+<p class="info">
+  お寿司が好きです。<br />
+  実は<span id="comingout">...</span>なんです！
+</p>
+<button onclick="show()">秘密を見る...!</button>
+```
+
+[![Image from Gyazo](https://i.gyazo.com/8fda5417e0662c5bafec110aec1b3d00.png)](https://gyazo.com/8fda5417e0662c5bafec110aec1b3d00)
+
+すると、以下のように自己紹介のパーツが配置されました！
+
+[![Image from Gyazo](https://i.gyazo.com/55b668c4b8b3890c922b4768016c3dac.png)](https://gyazo.com/55b668c4b8b3890c922b4768016c3dac)
+
+### 1-2-5. CSSでお化粧する
+
+[![Image from Gyazo](https://i.gyazo.com/d181020a31cd166569a9565ebdb63658.png)](https://gyazo.com/d181020a31cd166569a9565ebdb63658)
+
+CSSのエリアに、下記のコードをコピー＆ペーストします。
+
+```css
+body {
+  background-color: rgb(255, 200, 90);
+  text-align: center;
+}
+
+h1 {
+  color: gray;
+}
+
+img {
+  width: 250px;
+  height: auto;
+}
+
+.name {
+  font-size: 30px;
+}
+
+.info {
+  font-weight: bold;
+  color: blue;
+}
+```
+
+[![Image from Gyazo](https://i.gyazo.com/89ca3336e8e566fa35641ba9ba31968c.png)](https://gyazo.com/89ca3336e8e566fa35641ba9ba31968c)
+
+文字のサイズを変えたり、色をつけたりすることができました！
+
+[![Image from Gyazo](https://i.gyazo.com/0c7a5743b02317b1227eb616b8419912.png)](https://gyazo.com/0c7a5743b02317b1227eb616b8419912)
+
+### 1-2-6. JavaScript(JS)で動きをつける
+
+[![Image from Gyazo](https://i.gyazo.com/db91841ecc9318f258defa623a3a7512.png)](https://gyazo.com/db91841ecc9318f258defa623a3a7512)
+
+JSのエリアに、下記のコードをコピー＆ペーストします。
+
+```javascript
+function show() {
+  const comingout = document.getElementById("comingout");
+  comingout.textContent = "早起きが苦手";
+
+  alert("見ちゃったか");
+  console.log("クリックされました");
+}
+```
+
+[![Image from Gyazo](https://i.gyazo.com/2244fb70d2186f7f3ce83366d55930ed.png)](https://gyazo.com/2244fb70d2186f7f3ce83366d55930ed)
+
+ボタンをクリックしてみましょう。  
+秘密が表示されるようになりました！
+
+[![Image from Gyazo](https://i.gyazo.com/dca517563bc162bb5504dcbdfcc024cd.gif)](https://gyazo.com/dca517563bc162bb5504dcbdfcc024cd)
+
+### 1-2-7. HTML/CSS/JavaScriptを自分で書き換えてみよう
+
+[![Image from Gyazo](https://i.gyazo.com/4709dba0bf871b07dae26111b1b3fe48.png)](https://gyazo.com/4709dba0bf871b07dae26111b1b3fe48)
+
+自分のプロフィールページを作ってみましょう！
+
+1. まずは「HTML」を触ってみて、どこを書き換えれば表示が変化するのか確認する。
+1. HTMLだけを書き換えて、表示結果が次の3点を満たすようにする。
+   - 名前を変更する
+   - プロフィール画像は以下のツールを利用しTwitterのプロフィール画像URLを設定する  
+     - [Twitterのプロフィール画像ゲッター (アイコンの元画像を取得)](https://lab.syncer.jp/Tool/Twitter-Profile-Image/)
+   - 自己紹介文を変更する
+1. JavaScriptを書き換えて、秘密の内容を変える。
+1. 余裕があれば、CSSも触ってみて文字色やサイズ、背景などを変えてみる。
+1. 左上の「Untitled」を編集して、自分のペンに名前をつけ、Saveボタンで必ず保存する。
+
+## 1-3. 「ペン」を探し、フォークして使おう
+
+CodePenには、他ユーザーが作成したペンがたくさん公開されており、コピーして利用することができます。
+
+[![Image from Gyazo](https://i.gyazo.com/95bf44cfa98533f183d4ed474f1c2543.png)](https://gyazo.com/95bf44cfa98533f183d4ed474f1c2543)
+
+講師がペンを探すときのテクニックをいくつか紹介します。
+
+1. トレンドから探す
+   - [Trending - CodePen](https://codepen.io/trending)を開くと、人気のあるペンが表示されるので、ざっと眺める。
+1. まとめサイトから探す
+   - `CodePen ランキング`などでGoogle検索すると、`20xx年に人気！コードランキング ベスト100！`みたいなサイトがヒットするので、ざっと眺める。
+1. パーツ名で検索する
+   - CodePen画面上部の検索バーから、使いたいパーツ名`button`・`card`などで検索する
+1. 目的で検索する
+   - CodePen画面上部の検索バーから、ページの目的`profile`・`shop`などで検索する
+
+### 1-3-1. プロフィールページをおしゃれにするペンを探して、実際に使ってみよう
+
+[![Image from Gyazo](https://i.gyazo.com/4709dba0bf871b07dae26111b1b3fe48.png)](https://gyazo.com/4709dba0bf871b07dae26111b1b3fe48)
+
+ペンを探し、おしゃれなプロフィールページを作ってみましょう。
+
+どのアプローチでもOKです。
+
+- パーツを探し、前のハンズオンで作成したペンを改良する
+- 自己紹介ページのペンを探し、自分の内容に書き換える
+
+使いたいペンを見つけたら、ページ下部にある「Fork」ボタンをクリックしてください。  
+ペンがテンプレートに変換され、そのまま編集して自分のペンとして保存できるようになります。
+
+<a href="https://gyazo.com/26e66500b5e480d722510c131331f5ae"><img src="https://i.gyazo.com/26e66500b5e480d722510c131331f5ae.png" alt="Image from Gyazo" width="400"/></a>
+
+少し時間を取りますので、作成したプロフィールページをみんなに紹介してください！
+
+## 1-4. (補足)エクスポートして自分のPCで編集・表示する
+
+ペンはエクスポートして、HTML/CSS/JavaScriptファイルをダウンロードすることができます。  
+CodePenで作成した内容を、Webページとして公開したい場合に利用しましょう。
+
+<a href="https://gyazo.com/7af1e30e848341198a0344ec7add3995"><img src="https://i.gyazo.com/7af1e30e848341198a0344ec7add3995.png" alt="Image from Gyazo" width="400"/></a>
+
+ページ下部「Export」ボタンをクリックし、ZIPで自分のPCに保存しましょう。（1回クリックし、さらに「Download.zip」をクリックしてローカルに保存）
+
+PCに保存できたら、ZIPを解凍して中身を確認してみましょう。  
+Windowsの場合、ZIPファイルを右クリック →「すべて展開」をクリックし、フォルダとして完全に展開してしまいましょう。  
+参考：[Windows10 「すべて展開」を表示する方法 | ITSakura](https://itsakura.com/windows-expansion)
+
+### 1-4-1. srcとdistの違い
+
+引き続き手を動かします。  
+あいだに少しずつ説明が入ってくるため、ゆっくり進めます。
+
+[![Image from Gyazo](https://i.gyazo.com/83ef97e17d9fb6aa17ff3b2e84d9e2b5.png)](https://gyazo.com/83ef97e17d9fb6aa17ff3b2e84d9e2b5)
+
+解凍したフォルダの中身はこんな感じになっていると思います（macOSの場合）。
+
+- srcフォルダ  
+  **source** の略で、CodePen上で実際に編集したそのままのデータが入っています。
+- distフォルダ  
+  **distribution** の略で、実際にWebサーバーへデプロイ（いわゆる「ホームページ設置」）するときに実際に使うデータが入っています。
+
+両方のデータを比較してみましょう。
+
+#### 1-4-1-1. src/index.html
+
+[![Image from Gyazo](https://i.gyazo.com/a19c256dd980677b2486a6391dca2eb5.png)](https://gyazo.com/a19c256dd980677b2486a6391dca2eb5)
+
+#### 1-4-1-2. dist/index.html
+
+[![Image from Gyazo](https://i.gyazo.com/57e215a59b759804cd9384dbfddbf1cb.png)](https://gyazo.com/57e215a59b759804cd9384dbfddbf1cb)
+
+srcからdistへと自動で変換されていますが、これはCodePen上でしかできません。  
+ということで、自分のPCにエクスポートしたあとは  
+**触るのはdistフォルダ内のデータ** であることをしっかりと覚えておきましょう！
+
+### 1-4-2. 自分のPCでWebページを表示する
+
+VSCodeを開き、上記のdistフォルダをVSCode内のエクスプローラで開いておきましょう。
+
+[![Image from Gyazo](https://i.gyazo.com/22849f7c834981a6db829b9a3b72e55b.png)](https://gyazo.com/22849f7c834981a6db829b9a3b72e55b)
+
+VSCode拡張機能[Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)をインストールします。  
+(再起動を求められたら、VSCodeを再起動してください。)
+
+VSCode右下の`Go Live`をクリックします。
+
+[![Image from Gyazo](https://i.gyazo.com/281fe1045a4ea664c58e3edd61dfb03c.png)](https://gyazo.com/281fe1045a4ea664c58e3edd61dfb03c)
+
+> Go Liveが表示されない人は以下をチェックしてください
+>
+> - 拡張機能`Live Server`をインストールして、VSCodeを再起動したか
+> - ファイルの作成者を信頼するか確認された場合は、`はい、作成者を信頼します`を選択したか
+>
+> それでも表示されない場合は、`Cmd + Shift + P`(Windowsの方は`Cmd + Shift + P`)でコマンドパレットを表示し、`Live Server: Open With Live Server`を実行しましょう。
+
+Port: 5500 と表示されればOK。
+
+[![Image from Gyazo](https://i.gyazo.com/80cb662b867e0ca368a617257ed742e1.png)](https://gyazo.com/80cb662b867e0ca368a617257ed742e1)
+
+http://localhost:5500/ をブラウザで開いてみましょう。  
+CodePenで見ていたのと、同じページが表示されます！
+
+> Live Serverがうまく動かない場合は、下記のコマンドを実行してみてください。
+>
+> ```
+> npm i -g serve
+> serve
+> ```
+> 
+> URLが表示されるので、ブラウザで開いてみましょう。
+
+このままngrokなどで全世界に公開するとどこからでもアクセスすることができるようになります！  
+ただしngrokを停止するとWebページを見ることができなくなるので、継続して公開したい場合は、Vercelなどにデプロイすると良いでしょう。
+
+---
+
+- [次ページに進む](./handson02.md)
+- [目次に戻る](.)

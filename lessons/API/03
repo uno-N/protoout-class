@@ -1,0 +1,137 @@
+# 3. WebブラウザでVR・AR - WebGL
+
+本章では、Webブラウザを使って、VRやARアプリを動かしてみます。
+
+完璧に理解する必要はないです。コピペでも良いので動かせるようになりましょう。  
+また、Webブラウザでこういうこともできるんだ、ということを知り、手段としてストックしておきましょう。
+
+## 3-1. VRと3D表現 - WebGLとA-Frame
+
+PCやスマートフォンといった端末側の処理能力の向上に伴い、Web上でもGPUを用いた豊かな3D表現ができるようになってきています。  
+特に「WebGL」はそれを実現するWeb標準技術のひとつで、Webアプリケーションでも3Dゲームの制作といった高度な発展を可能にしていますが、今回はそんな3D技術をより簡単に扱えるフレームワーク「A-Frame」を試していきます。
+
+### 3-1-1. 受講ポイント
+
+- 選択肢としての「3D」の敷居を下げてもらいたいです。
+- 3Dだからこそ表現可能なものも存在することを理解しましょう。
+- （簡単なものなら）UnityやBlenderといった専門性の高いソフトまで手を伸ばす必要はない、ということです。
+
+### 3-1-2. まずは公式ページで体験してみよう
+
+[A\-Frame – Make WebVR](https://aframe.io/)  
+こちらにアクセスし、左カラムのExamples内「Hello WebVR」を見てみましょう。
+
+スマートフォンでも見てみましょう。
+
+<a href="https://gyazo.com/bfe468d24f0b0f4a0982cde982bc3a2c"><img src="https://i.gyazo.com/bfe468d24f0b0f4a0982cde982bc3a2c.png" alt="Image from Gyazo" width="200"/></a>
+
+### 3-1-3. ソースコードをのぞいてみよう
+
+CodePenで「Hello WebVR」と同じコードを実装したものです。  
+[A\-Frame \- Hello](https://codepen.io/ukkz/pen/jOrXObq)
+
+#### 3-1-3-1. 要点
+
+- JSを書く必要がなく、HTMLの独自タグが基本であること
+- シーン・背景・カメラ・オブジェクトのそれぞれで専用タグがある
+- マウスあるいはスワイプで手軽に視点移動ができる（これを自力で実装するだけでも大変）
+- VRゴーグルのようなデバイスでもそのまま使える（WebXR）
+
+A-Frameの基本的な構造の説明と使い方は次が参考になります。  
+[A\-Frameを使った基本的なデモの作成 \- ゲーム開発 \| MDN](https://developer.mozilla.org/ja/docs/Games/Techniques/3D_on_the_web/Building_up_a_basic_demo_with_A-Frame)
+
+### 3-1-4. コードを変更してみよう
+
+1. CodePenページにアクセス  
+  [A\-Frame \- Hello](https://codepen.io/ukkz/pen/jOrXObq)  
+  左下 `Fork` クリックして自分のPenにする
+2. 実際にタグの中身を触って見た目を変えてみましょう
+  - 位置  
+  - 色
+  - 新しい物体を追加
+  - その他、自分でドキュメントを読んで挑戦、など…
+
+### 3-1-5. VRとその他技術の連携
+
+仮想的な物体に対して「イベント」を設定することが可能です。  
+「イベント」=「何かが発生したら、その時に実行される用の関数を用意しておける」ということです。  
+[A\-Frame \- 視点ターゲットとマウスイベント](https://codepen.io/ukkz/pen/bGeOGve)
+
+関数の中身によっては、A-Frameによる仮想空間で何かが起こったことを「トリガー」とすることで、その他の様々なアクションの起点とすることも可能です。  
+[A\-Frame \- JS関数を呼び出す](https://codepen.io/ukkz/pen/mdEadjd)
+
+- バーチャル目覚まし時計をクリックするとLINEに「おはよう」と通知が飛んでくる
+- ロボットを撃破するとobnizから撃破音が流れる
+
+## 3-2. 拡張現実 - AR.js
+
+スマートフォンのカメラを用いて身の周りの風景を取り込み、それに対してバーチャルな物体を出現させる、いわゆる「AR」を手軽に行ってみます。  
+
+### 3-2-1. 作品例
+
+- [イヤイヤ期をARの世界でウキウ期にする！実際に会えるAR『AeRu(あえる)』](https://camp-fire.jp/projects/view/344677?list=channel_sparks)
+
+### 3-2-2. 受講ポイント
+
+- ARの基本的な構成（カメラデバイスとマーカー）について理解しましょう。
+- ふだんの日常に「マーカー」を置き、それをスマホを通して見るだけで、バーチャルと現実が融合した世界をつくれます。
+- 今回、マーカーは既存のものを使いますが、自分で作ることもできます。
+- 3Dモデルを作る、フリーで提供されているものを探す、など、技術そのものよりコンテンツを中心にした制作を楽しめます。
+
+### 3-2-3. まずは試してみよう
+
+1. CodePenのサンプルペンはこちら「[おてがる拡張現実 AR\.js](https://codepen.io/ukkz/pen/poeZeqZ)」（スマホで開いてください）  
+  <a href="https://gyazo.com/b0cb6b66f08c99c5244098ce391e2557"><img src="https://i.gyazo.com/b0cb6b66f08c99c5244098ce391e2557.png" alt="Image from Gyazo" width="222"/></a>
+2. PC側では、以下の「マーカー画像」が画面上に表示されていればOKです。  
+  自分で画像を作ることもできますが、今回はARの手始めに非常によく利用される以下の「hiroマーカー」を使います。  
+  <a href="https://gyazo.com/58508eb9bd7ca41b97dae2e85768e14d"><img src="https://i.gyazo.com/58508eb9bd7ca41b97dae2e85768e14d.png" alt="Image from Gyazo" width="300"/></a>
+3. スマホ側はカメラが起動していると思いますので、そのカメラでこの上のARマーカーを見てみましょう。角度をつけてみると…？
+
+参考: [オリジナルARマーカーを作る \- Qiita](https://qiita.com/suo-takefumi/items/5156bd009132bbd3a41a)
+
+### 3-2-4. (発展)好きな3Dモデルを現実世界に登場させてみよう
+
+1. [CGTrader \- VR / ARとCGプロジェクトのための3Dモデル](https://www.cgtrader.com/ja) にアクセス。  
+  右上のログインボタンから、Googleなどを使ってソーシャルログインしてください。
+2. [「glTF形式の無料モデル」](https://www.cgtrader.com/ja/3d-models/ext/gltf/glb)の中から、**気になったモデルを探して**みましょう。できるだけシンプルなもの（= データ量が少ないもの）が良いです。  
+  <a href="https://gyazo.com/8e2a1889f1e12a937e999512ff808318"><img src="https://i.gyazo.com/8e2a1889f1e12a937e999512ff808318.png" alt="Image from Gyazo" width="700"/></a>  
+  （チェックをいれておかないと自動で有料のものがおすすめされてしまいますので注意）
+3. 気になった3Dモデルのページへ行くと、右側に「Free Download」がありますのでクリック
+4. `.glb` または `.gltf` 形式のファイルがあればそれをダウンロードしましょう。  
+  ZIPで提供されている場合はそれを解凍し、中から `.glb` または `.gltf` を見つけましょう。
+  <a href="https://gyazo.com/c25201a9a1c86ffb0554b4e8a30eaafa"><img src="https://i.gyazo.com/c25201a9a1c86ffb0554b4e8a30eaafa.png" alt="Image from Gyazo" width="700"/></a>
+5. [Media Uploader \- 無料アップローダー](https://media-uploader.work/) に別タブでアクセスします。  
+  ページ下のほうの「編集パス」入力欄に適当な文言を入れましょう。`"edit"` など。  
+  そのあと、先ほど入手した `.glb` または `.gltf` ファイルを、点線のところへドラッグ&ドロップしてアップロードします。  
+  <a href="https://gyazo.com/e9d231da138533cd5ea53abf09b0ce01"><img src="https://i.gyazo.com/e9d231da138533cd5ea53abf09b0ce01.png" alt="Image from Gyazo" width="700"/></a>
+6. アップロード完了のリンクをコピーし、ブラウザのURL欄に貼り付けて移動します。  
+  通常のリンク形式になっておらず、クリックしても飛べないので注意。  
+  <a href="https://gyazo.com/f8eeb9b59af94703b46e4f5dc58fc391"><img src="https://i.gyazo.com/f8eeb9b59af94703b46e4f5dc58fc391.png" alt="Image from Gyazo" width="700"/></a> 
+7. 以下のように「直リンク」のURLが取得できるような状態になっていれば、あとでコピーしますのでこのページはそのまま置いておいてください。  
+  <a href="https://gyazo.com/e5ee010c562d6ba15448cf333e07eb7f"><img src="https://i.gyazo.com/e5ee010c562d6ba15448cf333e07eb7f.png" alt="Image from Gyazo" width="700"/></a>
+8. サンプルペン「[おてがる拡張現実 AR\.js](https://codepen.io/ukkz/pen/poeZeqZ)」をPCで開き、Forkしてください。
+9. ForkしたペンのHTML8行目〜10行目を消し、以下とまるごと置き換えてください。  
+
+  ```html
+  <a-entity
+      position="0 0 0"
+      scale="0.05 0.05 0.05"
+      gltf-model="https://cors-anywhere.herokuapp.com/[この部分をモデルアップロード直リンクと置き換え]"
+  ></a-entity>
+  ```
+
+9. 置き換え後、 `[この部分をモデルアップロード直リンクと置き換え]` の部分を、手順7で取得できるようになった「直リンク」にさらに置き換えてください。「...herokuapp.com/https://media...」のような少し違和感のある形式になりますが問題ないです。
+10. このペンのURLにスマホのブラウザからアクセスし、同様にPC上のhiroマーカーを読み取ってみましょう。  
+  モデルのファイル容量によりますが、根気強く待っていると何かしら表示されるはずです…！うまくいくかな？
+
+## 3-3. 演習タイム(20～30分)
+
+- `3-1-4. コードを変更してみよう`に取り組んでみましょう。
+- `3-2-4. (発展)好きな3Dモデルを現実世界に登場させてみよう`に取り組んでみましょう
+- 授業で扱っていないブラウザAPIの使い方を調べ、動かしてみましょう。
+- A-Frameの情報をQiitaやGitHubで調べ、まだ使っていない機能を使ってみましょう。
+
+--- 
+
+- [前ページに戻る](./handson02.md)
+- [目次に戻る](.)

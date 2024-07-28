@@ -1,0 +1,8 @@
+#app {
+    text-align: center; /* 表記を中央に配置 */
+    font-size: 1.5em; /* 文字を今の1.5倍の大きさに */
+}
+
+button {
+    margin-bottom: 20px; /* ボタンとボタンの間にスペースを追加 */
+}```

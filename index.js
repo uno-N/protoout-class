@@ -65,7 +65,7 @@ app.post('/save-angle', (req, res) => {
         });
     });
 });
-
+app.use(express.static('public'));//publicの中のファイルを公開する
 app.listen(PORT, () => {
     console.log(`サーバーがポート${PORT}で起動しました`);
 });
